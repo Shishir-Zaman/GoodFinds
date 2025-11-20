@@ -1,25 +1,40 @@
 <h1 align="center">✨ GoodFinds – Online Marketplace Platform ✨</h1>
+# GoodFinds Marketplace
 
-<p align="center">
-  <b>A collaborative project developed for Design Project 2</b><br>
-  <i>An online marketplace built with modern design principles and scalable architecture.</i>
-</p>
+GoodFinds is a trusted second-hand marketplace platform designed for buying and selling verified vintage, antique, and used items in Bangladesh. It connects buyers with trusted sellers (including major brands and individual collectors) and ensures authenticity through a verification system.
 
----
+## 🚀 Features
 
-## 🧩 Overview
+### 🛒 For Buyers
+*   **Browse & Search**: Advanced filtering by category, price, condition, and seller.
+*   **Smart Search**: Find products by name, description, or seller name.
+*   **Product Details**:
+    *   View detailed product history (Purchase Date vs. Listing Date).
+    *   **Vintage Logic**: Items older than 5 years are automatically labeled "Vintage", and 20+ years as "Antique".
+    *   Seller verification badges.
+*   **Shopping Cart**: Modern cart management with real-time total calculation.
+*   **Secure Checkout**: Integrated order placement system.
 
-**GoodFinds** is a modern marketplace platform designed to make discovering, buying, and selling curated products simple and engaging.  
-The project focuses on clean user experience, intuitive navigation, and robust full-stack development practices.
+### 🏪 For Sellers
+*   **Dashboard**:
+    *   **Overview**: View total sales, active listings, and pending orders.
+    *   **Product Management**: Add, edit, and delete products with ease.
+    *   **Order Management**: Update order status (Pending -> Shipped -> Delivered) and manage customer orders.
+*   **Profile**: Manage seller profile and verification status.
 
-Key objectives:
-- User-friendly marketplace interface  
-- Buyer & seller accounts with authentication  
-- Product search, wishlist, and review features  
-- Mobile-responsive design  
-- Secure and scalable architecture  
+### 🛡️ Trust & Safety
+*   **Seller Verification**: Admin-verified sellers receive a "Verified" badge.
+*   **Product Authenticity**: "Verified Authentic" badges for checked items.
+*   **Condition Transparency**: Clear distinction between "Fresh", "Good", "Vintage", and "Antique" conditions.
 
----
+## 🛠️ Tech Stack
+
+*   **Frontend**: React.js, Tailwind CSS, React Router, Axios, React Icons.
+*   **Backend**: Node.js, Express.js.
+*   **Database**: MySQL (via XAMPP).
+*   **Authentication**: Custom JWT-based authentication (simulated for this project).
+
+
 
 ## 👥 Team Members
 
@@ -31,19 +46,4 @@ Key objectives:
 | **Md. Al Amin** | 223014162 | Research & UX Documentation |
 
 ---
-
-## ⚙️ Tech Stack
-
-| Layer | Technologies |
-|-------|---------------|
-| **Frontend** | React.js / Next.js, Tailwind CSS |
-| **Backend** | Node.js / Express.js |
-| **Database** | MongoDB / Firebase (TBD) |
-| **Design** | Figma, Adobe Illustrator |
-| **Version Control** | Git & GitHub |
-| **Project Management** | Trello |
-
----
-
-## 🗂️ Repository Structure
 
