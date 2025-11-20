@@ -47,18 +47,3 @@ GoodFinds is a trusted second-hand marketplace platform designed for buying and 
 
 ---
 
-## ⚙️ Tech Stack
-
-| Layer | Technologies |
-|-------|---------------|
-| **Frontend** | React.js / Next.js, Tailwind CSS |
-| **Backend** | Node.js / Express.js |
-| **Database** | MongoDB / Firebase (TBD) |
-| **Design** | Figma, Adobe Illustrator |
-| **Version Control** | Git & GitHub |
-| **Project Management** | Trello |
-
----
-
-## 🗂️ Repository Structure
-
