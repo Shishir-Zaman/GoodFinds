@@ -1,5 +1,4 @@
-<h1 align="center">✨ GoodFinds – Online Marketplace Platform ✨</h1>
-# GoodFinds Marketplace
+<h1 align="center">✨ GoodFinds BD– Online Marketplace Platform ✨</h1>
 
 GoodFinds is a trusted second-hand marketplace platform designed for buying and selling verified vintage, antique, and used items in Bangladesh. It connects buyers with trusted sellers (including major brands and individual collectors) and ensures authenticity through a verification system.
 
