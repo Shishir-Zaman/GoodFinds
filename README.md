@@ -1,4 +1,4 @@
-# GoodFinds Marketplace
+<h1 align="center">✨ GoodFinds BD– Online Marketplace Platform ✨</h1>
 
 GoodFinds is a trusted second-hand marketplace platform designed for buying and selling verified vintage, antique, and used items in Bangladesh. It connects buyers with trusted sellers (including major brands and individual collectors) and ensures authenticity through a verification system.
 
@@ -64,3 +64,14 @@ The application will run on `http://localhost:5173`.
 
 ## 📝 License
 This project is created for ULAB Design Project II.
+
+## 👥 Team Members
+
+| Name | Student ID | Role |
+|------|-------------|------|
+| **Shovon Dip Karmaker** | 213014056 | Frontend Developer / UI Implementation |
+| **Rafsan Jani Siam** | 222014061 | Backend Developer / API Integration |
+| **Asifuzzaman Shishir** | 222014090 | Team Lead / Product Designer & Full Stack Developer |
+| **Md. Al Amin** | 223014162 | Research & UX Documentation |
+
+---
