@@ -1,77 +1,126 @@
-<h1 align="center">✨ GoodFinds BD– Online Marketplace Platform ✨</h1>
+<h1 align="center">✨ GoodFinds BD – Online Marketplace Platform ✨</h1>
 
-GoodFinds is a trusted second-hand marketplace platform designed for buying and selling verified vintage, antique, and used items in Bangladesh. It connects buyers with trusted sellers (including major brands and individual collectors) and ensures authenticity through a verification system.
+<div align="center">
 
-## 🚀 Features
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://goodfinds-frontend.vercel.app)
+[![Backend API](https://img.shields.io/badge/Backend_API-Render-46E3B7?style=for-the-badge&logo=render)](https://goodfinds.onrender.com)
+[![Database](https://img.shields.io/badge/Database-Aiven_MySQL-FF5000?style=for-the-badge&logo=mysql)](https://aiven.io)
+
+**A trusted second-hand marketplace connecting buyers with verified vintage, antique, and used items.**
+
+</div>
+
+---
+
+## 🚀 Key Features
 
 ### 🛒 For Buyers
-*   **Browse & Search**: Advanced filtering by category, price, condition, and seller.
-*   **Smart Search**: Find products by name, description, or seller name.
-*   **Product Details**:
-    *   View detailed product history (Purchase Date vs. Listing Date).
-    *   **Vintage Logic**: Items older than 5 years are automatically labeled "Vintage", and 20+ years as "Antique".
-    *   Seller verification badges.
-*   **Shopping Cart**: Modern cart management with real-time total calculation.
-*   **Secure Checkout**: Integrated order placement system.
+*   **Smart Search & Filters**: Filter by category, price, "Vintage" status, and seller.
+*   **Vintage Logic**:
+    *   🏷️ **Fresh**: < 1 year old
+    *   🏺 **Vintage**: > 5 years old
+    *   📜 **Antique**: > 20 years old
+*   **Secure Checkout**: Real-time cart calculation and order placement.
+*   **Verification Badges**: "Verified Seller" and "Authentic Product" tags.
 
 ### 🏪 For Sellers
-*   **Dashboard**:
-    *   **Overview**: View total sales, active listings, and pending orders.
-    *   **Product Management**: Add, edit, and delete products with ease.
-    *   **Order Management**: Update order status (Pending -> Shipped -> Delivered) and manage customer orders.
-*   **Profile**: Manage seller profile and verification status.
+*   **Seller Dashboard**: Track sales, revenue, and active listings visually.
+*   **Product Management**: Easy listing creation with image support.
+*   **Order Fulfillment**: Manage order status (Pending → Shipped → Delivered).
 
-### 🛡️ Trust & Safety
-*   **Seller Verification**: Admin-verified sellers receive a "Verified" badge.
-*   **Product Authenticity**: "Verified Authentic" badges for checked items.
-*   **Condition Transparency**: Clear distinction between "Fresh", "Good", "Vintage", and "Antique" conditions.
+---
+
+## ☁️ Cloud Architecture
+
+This project is fully deployed to the cloud, moving away from local XAMPP/Localhost.
+
+```mermaid
+graph TD
+    User[User / Browser] -->|HTTPS| Frontend[Frontend (Vercel)]
+    Frontend -->|REST API| Backend[Backend (Render)]
+    Backend -->|SSL Connection| DB[(MySQL Database (Aiven))]
+```
+
+*   **Frontend**: React + Vite (Hosted on Vercel)
+*   **Backend**: Node.js + Express (Hosted on Render)
+*   **Database**: Managed MySQL (Hosted on Aiven Cloud)
+
+---
 
 ## 🛠️ Tech Stack
 
-*   **Frontend**: React.js, Tailwind CSS, React Router, Axios, React Icons.
-*   **Backend**: Node.js, Express.js.
-*   **Database**: MySQL (via XAMPP).
-*   **Authentication**: Custom JWT-based authentication (simulated for this project).
+*   **Frontend**: React.js, Tailwind CSS, Axios, Framer Motion
+*   **Backend**: Node.js, Express.js, MySQL2
+*   **Database**: MySQL (Aiven Cloud)
+*   **DevOps**: Vercel, Render, Git
 
-## ⚙️ Setup & Installation
+---
 
-### Prerequisites
-*   **Node.js** (v14 or higher)
-*   **XAMPP** (for MySQL Database)
-*   **Git**
+## ⚙️ Setup & Installation (Local Development)
 
-### 1. Database Setup
-1.  Open **XAMPP Control Panel** and start **Apache** and **MySQL**.
-2.  Open your browser and go to `http://localhost/phpmyadmin`.
-3.  Create a new database named `goodfinds`.
-4.  Import the `database/goodfinds_complete.sql` file (or run the schema scripts) to set up tables and seed data.
+Follow these steps to run the project locally while connecting to the Cloud Database.
+
+### 1. Clone the Repo
+```bash
+git clone https://github.com/Shishir-Zaman/GoodFinds.git
+cd GoodFinds
+```
 
 ### 2. Backend Setup
 ```bash
 cd backend
 npm install
-npm start
 ```
-The server will start on `http://localhost:5000`.
+
+**Configure Environment:**
+Create a `.env` file in the `backend` folder:
+```env
+# Use your Aiven Connection URI here
+DATABASE_URL="mysql://avnadmin:password@host:port/defaultdb?ssl-mode=REQUIRED"
+DB_SSL="true"
+PORT=5000
+```
+
+**Populate Database (Seed Data):**
+```bash
+# This fills the cloud database with demo data
+npm run seed
+```
+
+**Start Server:**
+```bash
+npm run dev
+```
 
 ### 3. Frontend Setup
 ```bash
 cd frontend
 npm install
+```
+
+**Update API URL (Optional for Local Dev):**
+If you want to use your local backend instead of the live production one:
+1.  Go to `src/App.jsx` and `pages/Dashboard.jsx` (etc).
+2.  Change `https://goodfinds.onrender.com` back to `http://localhost:5000`.
+
+**Start React App:**
+```bash
 npm run dev
 ```
-The application will run on `http://localhost:5173`.
 
-## 📝 License
-This project is created for ULAB Design Project II.
+---
 
 ## 👥 Team Members
 
 | Name | Student ID | Role |
 |------|-------------|------|
-| **Shovon Dip Karmaker** | 213014056 | Frontend Developer / UI Implementation |
-| **Rafsan Jani Siam** | 222014061 | Backend Developer / API Integration |
-| **Asifuzzaman Shishir** | 222014090 | Team Lead / Product Designer & Full Stack Developer |
-| **Md. Al Amin** | 223014162 | Research & UX Documentation |
+| **Asifuzzaman Shishir** | 222014090 | **Team Lead** / Full Stack / System Architecture |
+| **Shovon Dip Karmaker** | 213014056 | Frontend / UI Implementation |
+| **Rafsan Jani Siam** | 222014061 | Backend / API Integration |
+| **Md. Al Amin** | 223014162 | UX Research / Documentation |
 
 ---
+
+<p align="center">
+  <i>Created for ULAB Design Project II</i>
+</p>
