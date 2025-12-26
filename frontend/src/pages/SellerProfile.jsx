@@ -14,8 +14,8 @@ const SellerProfile = () => {
         const fetchSellerData = async () => {
             try {
                 const [sellerRes, productsRes] = await Promise.all([
-                    axios.get(`http://localhost:5000/api/users/${id}`),
-                    axios.get(`http://localhost:5000/api/users/${id}/products`)
+                    axios.get(`https://goodfinds.onrender.com/api/users/${id}`),
+                    axios.get(`https://goodfinds.onrender.com/api/users/${id}/products`)
                 ]);
                 setSeller(sellerRes.data);
                 setProducts(productsRes.data);

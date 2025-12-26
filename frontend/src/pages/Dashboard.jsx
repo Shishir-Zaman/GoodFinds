@@ -68,7 +68,7 @@ const Dashboard = () => {
 
     const fetchCategories = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/products/categories');
+            const res = await axios.get('https://goodfinds.onrender.com/api/products/categories');
             setCategories(res.data);
             if (res.data.length > 0 && !formData.category_id) {
                 setFormData(prev => ({ ...prev, category_id: res.data[0].id.toString() }));
@@ -80,7 +80,7 @@ const Dashboard = () => {
 
     const fetchMyProducts = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/users/${user.id}/products`);
+            const res = await axios.get(`https://goodfinds.onrender.com/api/users/${user.id}/products`);
             setMyProducts(res.data);
         } catch (err) {
             console.error('Error fetching products:', err);
@@ -91,9 +91,9 @@ const Dashboard = () => {
         try {
             let res;
             if (user.role === 'seller') {
-                res = await axios.get(`http://localhost:5000/api/orders/seller/${user.id}`);
+                res = await axios.get(`https://goodfinds.onrender.com/api/orders/seller/${user.id}`);
             } else {
-                res = await axios.get(`http://localhost:5000/api/orders/buyer/${user.id}`);
+                res = await axios.get(`https://goodfinds.onrender.com/api/orders/buyer/${user.id}`);
             }
             setMyOrders(res.data);
         } catch (err) {
@@ -103,7 +103,7 @@ const Dashboard = () => {
 
     const fetchUsers = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/users');
+            const res = await axios.get('https://goodfinds.onrender.com/api/users');
             setUsers(res.data);
         } catch (err) {
             console.error('Error fetching users:', err);
@@ -112,7 +112,7 @@ const Dashboard = () => {
 
     const fetchAllProducts = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/products');
+            const res = await axios.get('https://goodfinds.onrender.com/api/products');
             setAllProducts(res.data);
         } catch (err) {
             console.error('Error fetching all products:', err);
@@ -121,7 +121,7 @@ const Dashboard = () => {
 
     const handleVerifyUser = async (userId, currentStatus) => {
         try {
-            await axios.put(`http://localhost:5000/api/users/${userId}/verify`, { is_verified: !currentStatus });
+            await axios.put(`https://goodfinds.onrender.com/api/users/${userId}/verify`, { is_verified: !currentStatus });
             fetchUsers();
             alert(`User ${!currentStatus ? 'verified' : 'unverified'} successfully!`);
         } catch (err) {
@@ -133,7 +133,7 @@ const Dashboard = () => {
     const handleDeleteUser = async (userId) => {
         if (!window.confirm('Are you sure you want to delete this user? This action cannot be undone.')) return;
         try {
-            await axios.delete(`http://localhost:5000/api/users/${userId}`);
+            await axios.delete(`https://goodfinds.onrender.com/api/users/${userId}`);
             fetchUsers();
             alert('User deleted successfully!');
         } catch (err) {
@@ -144,7 +144,7 @@ const Dashboard = () => {
 
     const handleVerifyProduct = async (productId, currentStatus) => {
         try {
-            await axios.put(`http://localhost:5000/api/products/${productId}/verify`, { is_authentic: !currentStatus });
+            await axios.put(`https://goodfinds.onrender.com/api/products/${productId}/verify`, { is_authentic: !currentStatus });
             fetchAllProducts();
             alert(`Product ${!currentStatus ? 'verified' : 'unverified'} successfully!`);
         } catch (err) {
@@ -216,14 +216,14 @@ const Dashboard = () => {
 
             if (editingProduct) {
                 // Update existing product
-                await axios.put(`http://localhost:5000/api/products/${editingProduct.id}`, productData);
+                await axios.put(`https://goodfinds.onrender.com/api/products/${editingProduct.id}`, productData);
                 alert('Product updated successfully!');
                 setEditingProduct(null);
             } else {
                 // Create new product
                 productData.seller_id = user.id;
                 productData.created_at = new Date().toISOString();
-                await axios.post('http://localhost:5000/api/products', productData);
+                await axios.post('https://goodfinds.onrender.com/api/products', productData);
                 alert('Product listed successfully!');
             }
 
@@ -251,7 +251,7 @@ const Dashboard = () => {
     const handleProfileUpdate = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/api/users/${user.id}`, profileData);
+            await axios.put(`https://goodfinds.onrender.com/api/users/${user.id}`, profileData);
             updateUser({ ...user, ...profileData });
             setEditMode(false);
             alert('Profile updated successfully!');
@@ -283,7 +283,7 @@ const Dashboard = () => {
         if (!window.confirm('Are you sure you want to delete this product?')) return;
 
         try {
-            await axios.delete(`http://localhost:5000/api/products/${productId}`);
+            await axios.delete(`https://goodfinds.onrender.com/api/products/${productId}`);
             fetchMyProducts();
             alert('Product deleted successfully!');
         } catch (err) {
@@ -294,7 +294,7 @@ const Dashboard = () => {
 
     const handleUpdateOrderStatus = async (orderId, newStatus) => {
         try {
-            await axios.put(`http://localhost:5000/api/orders/${orderId}`, { status: newStatus });
+            await axios.put(`https://goodfinds.onrender.com/api/orders/${orderId}`, { status: newStatus });
             fetchMyOrders();
             alert('Order status updated successfully!');
         } catch (err) {
@@ -307,7 +307,7 @@ const Dashboard = () => {
         if (!window.confirm('Are you sure you want to delete this order?')) return;
 
         try {
-            await axios.delete(`http://localhost:5000/api/orders/${orderId}`);
+            await axios.delete(`https://goodfinds.onrender.com/api/orders/${orderId}`);
             fetchMyOrders();
             alert('Order deleted successfully!');
         } catch (err) {

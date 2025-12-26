@@ -22,12 +22,12 @@ const ProductList = () => {
 
     useEffect(() => {
         // Fetch categories
-        axios.get('http://localhost:5000/api/products/categories')
+        axios.get('https://goodfinds.onrender.com/api/products/categories')
             .then(res => setCategories(res.data))
             .catch(err => console.error(err));
 
         // Fetch sellers
-        axios.get('http://localhost:5000/api/users/sellers')
+        axios.get('https://goodfinds.onrender.com/api/users/sellers')
             .then(res => {
                 const sellerUsers = res.data;
                 const verified = sellerUsers.filter(s => s.is_verified).sort((a, b) => a.name.localeCompare(b.name));
@@ -41,7 +41,7 @@ const ProductList = () => {
         const fetchProducts = async () => {
             setLoading(true);
             try {
-                let url = 'http://localhost:5000/api/products';
+                let url = 'https://goodfinds.onrender.com/api/products';
                 const params = [];
                 if (category) params.push(`category=${category}`);
                 if (search) params.push(`search=${search}`);

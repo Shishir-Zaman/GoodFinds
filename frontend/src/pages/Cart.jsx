@@ -25,7 +25,7 @@ const Cart = () => {
         setIsCheckingOut(true);
 
         try {
-            await axios.post('http://localhost:5000/api/orders', {
+            await axios.post('https://goodfinds.onrender.com/api/orders', {
                 buyer_id: user.id,
                 items: cartItems,
                 total_amount: grandTotal

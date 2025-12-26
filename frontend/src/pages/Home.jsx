@@ -12,11 +12,11 @@ const Home = () => {
         const fetchData = async () => {
             try {
                 // Fetch Categories
-                const catRes = await axios.get('http://localhost:5000/api/products/categories');
+                const catRes = await axios.get('https://goodfinds.onrender.com/api/products/categories');
                 setCategories(catRes.data);
 
                 // Fetch Featured Products (Limit to 8 for home page)
-                const prodRes = await axios.get('http://localhost:5000/api/products');
+                const prodRes = await axios.get('https://goodfinds.onrender.com/api/products');
                 setFeaturedProducts(prodRes.data.slice(0, 8));
             } catch (error) {
                 console.error('Error fetching home data:', error);

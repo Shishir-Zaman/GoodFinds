@@ -84,7 +84,7 @@ const PostProduct = () => {
             };
 
             console.log('Sending product data:', productData);
-            await axios.post('http://localhost:5000/api/products', productData);
+            await axios.post('https://goodfinds.onrender.com/api/products', productData);
             navigate('/dashboard');
         } catch (err) {
             console.error('Error posting product:', err);
